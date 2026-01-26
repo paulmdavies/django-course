@@ -5,5 +5,5 @@ from challenges import views
 urlpatterns = [
     path('<int:month>', views.monthly_challenge_by_number),
     path('<str:month>', views.monthly_challenge, name='monthly_challenge'),
-    path('', views.challenges)
+    path('', views.challenges, name='index'),
 ]
