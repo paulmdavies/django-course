@@ -43,12 +43,10 @@ def monthly_challenge(request, month):
 
 
 def challenges(request):
-    response_data = '<h1>Monthly Challenges</h1>'
-
-    response_data += '<ul>'
-    for month in monthly_challenges.keys():
-        href = reverse('monthly_challenge', args=[month])
-        response_data += f'<li><a href={href}>' + month.capitalize() + '</a></li>'
-    response_data += '</ul>'
-
-    return HttpResponse(response_data)
+    return render(
+        request,
+        'challenges/index.html',
+        {
+            'challenges': monthly_challenges.keys()
+        }
+    )
