@@ -34,7 +34,7 @@ def monthly_challenge(request, month):
             request,
             'challenges/challenge.html',
             {
-                'month': month.capitalize(),
+                'month': month,
                 'challenge': monthly_challenges[month],
             }
         )
