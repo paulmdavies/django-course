@@ -14,7 +14,8 @@ monthly_challenges = {
     'september': 'Communication challenge: Use one \'vintage\' slang word (like \'balderdash\' or \'groovy\') in every meeting.',
     'october': 'Perfect your \'spooky walk\' and use it exclusively whenever you enter a kitchen.',
     'november': 'Write a Yelp-style review for every mundane object you use, like your stapler or a specific spoon.',
-    'december': 'Gift-wrap something you already own and give it to yourself on a Tuesday just for the drama.'
+    # 'december': 'Gift-wrap something you already own and give it to yourself on a Tuesday just for the drama.'
+    'december': None
 }
 
 
