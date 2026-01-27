@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Paul's Blog
+{% endblock %}
+
+{% block content %}
+    {% include 'blog/includes/header.html' %}
+
+    <h1>{{ title }}</h1>
+    <p>{{ text }}</p>
+{% endblock %}

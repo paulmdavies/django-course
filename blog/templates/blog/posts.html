@@ -1,22 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Paul's Blog
+    All Posts
 {% endblock %}
 
 {% block content %}
     {% include 'blog/includes/header.html' %}
 
-    <h1>Welcome to Paul's Blog!</h1>
-    <p>This is Paul Davies' personal blog. Feel free to read his thoughts.</p>
-
-    <h2>Recent Posts</h2>
+    <h2>All Posts</h2>
     {% for slug, title in post_titles.items reversed %}
         <div>
             <h3><a href={% url 'post' slug %}>{{ title }}</a></h3>
         </div>
     {% endfor %}
-
-    <a href={% url 'posts' %}>More Posts</a>
 
 {% endblock %}
