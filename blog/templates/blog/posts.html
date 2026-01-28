@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'blog/includes/header.html' %}
-
     <h2>All Posts</h2>
     {% for slug, title in post_titles.items reversed %}
         <div>

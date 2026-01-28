@@ -11,6 +11,12 @@
     {% block css-files %}{% endblock %}
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'posts' %}">Posts</a>
+        </nav>
+    </header>
     {% block content %}{% endblock %}
 </body>
 </html>
