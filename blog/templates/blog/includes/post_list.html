@@ -1,0 +1,5 @@
+{% for slug, title in post_titles.items reversed %}
+    <div>
+        <h3><a href={% url 'post' slug %}>{{ title }}</a></h3>
+    </div>
+{% endfor %}
