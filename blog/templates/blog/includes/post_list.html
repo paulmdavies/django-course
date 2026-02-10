@@ -1,6 +1,9 @@
+{% load static %}
+
 {% for slug, post in posts.items reversed %}
-    <div>
+    <img>
         <h3><a href={% url 'post' slug %}>{{ post.title }}</a></h3>
+        <img class="post-preview-image" src={% static 'blog/images/'|add:post.image %} alt="No image found">
         <h5>{{ post.summary }}</h5>
     </div>
 {% endfor %}

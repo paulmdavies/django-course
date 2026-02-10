@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Paul's Blog
@@ -7,5 +8,6 @@
 {% block content %}
     <h1>{{ post.title }}</h1>
     <h5>{{ post.summary }}</h5>
+    <img class="post-image" src={% static 'blog/images/'|add:post.image %} alt="No image found">
     <p>{{ post.text }}</p>
 {% endblock %}
