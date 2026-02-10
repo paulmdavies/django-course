@@ -1,5 +1,6 @@
-{% for slug, title in post_titles.items reversed %}
+{% for slug, post in posts.items reversed %}
     <div>
-        <h3><a href={% url 'post' slug %}>{{ title }}</a></h3>
+        <h3><a href={% url 'post' slug %}>{{ post.title }}</a></h3>
+        <h5>{{ post.summary }}</h5>
     </div>
 {% endfor %}
