@@ -17,6 +17,10 @@ class Author(Model):
 
 class Tag(Model):
     caption = CharField(max_length=100)
+    slug = SlugField()
+
+    def __str__(self):
+        return self.caption
 
 
 class Post(Model):

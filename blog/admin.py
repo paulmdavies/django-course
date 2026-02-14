@@ -32,6 +32,15 @@ class AuthorAdmin(ModelAdmin):
     }
 
 
+class TagAdmin(ModelAdmin):
+    list_display = [
+        'caption'
+    ]
+
+    prepopulated_fields = {
+        'slug': ['caption']
+    }
+
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(Tag)
+admin.site.register(Tag, TagAdmin)
 admin.site.register(Post, PostAdmin)
