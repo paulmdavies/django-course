@@ -4,6 +4,7 @@
     <img>
         <a href={% url 'post' post.slug %}>
             <h3>{{ post.title }}</h3>
+            <h5>by {{ post.author }}</h5>
             <h6>{{ post.date }}</h6>
             <img class="post-preview-image" src={% static 'blog/images/'|add:post.image %} alt="No image found">
             <h5>{{ post.summary }}</h5>

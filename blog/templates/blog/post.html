@@ -7,6 +7,7 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
+    <h4>by {{ post.author }}</h4>
     <h6>{{ post.date }}</h6>
     <img class="post-image" src={% static 'blog/images/'|add:post.image %} alt="No image found">
     <h5>{{ post.summary }}</h5>

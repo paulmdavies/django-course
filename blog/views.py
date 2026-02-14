@@ -2,10 +2,12 @@ from datetime import date
 
 from django.shortcuts import render
 
+from blog.models import Post
 
 all_posts_details = [
     {
         'slug': 'slug',
+        'author': 'Paul Davies',
         'title': 'My thoughts',
         'summary': 'My thoughts on this Django challenge',
         'text': 'I don\'t think this is too hard a challenge',
@@ -14,6 +16,7 @@ all_posts_details = [
     },
     {
         'slug': 'slug-2',
+        'author': 'Paul Davies',
         'title': 'My new toaster is judging me',
         'summary': '''The robot apocalypse didn’t start with chrome skeletons or laser beams. It started with my "Smart Toaster" refusing to brown my sourdough until I accepted its updated Terms and Conditions.
 
@@ -27,6 +30,7 @@ all_posts_details = [
     },
     {
         'slug': 'slug-3',
+        'author': 'Paul Davies',
         'title': 'The Ultimate Backseat Driver',
         'summary': 'I bought a self-driving car for the convenience, but I ended up with a passive-aggressive AI that has strong opinions on my musical taste.',
         'text': '''I thought buying a self-driving car would be relaxing. I’d sip lattes and read poetry while gliding through traffic. Instead, my sedan has developed a "personality."
@@ -40,6 +44,7 @@ all_posts_details = [
     },
     {
         'slug': 'slug-4',
+        'author': 'Paul Davies',
         'title': 'Farewell, Front Porch',
         'summary': 'A cautionary tale about what happens when "industrial strength" meets a portal-opening pressure washer and a very unfortunate driveway.',
         'text': '''I rented the "Industrial Kraken 9000" to clean some mild mildew off my driveway. I expected a satisfying spray; I didn’t expect to open a portal to another dimension.
@@ -53,6 +58,7 @@ all_posts_details = [
     },
     {
         'slug': 'slug-5',
+        'author': 'Paul Davies',
         'title': 'The 40mph Flyweight',
         'summary': 'I tried "Turbo Mode" on my new e-bike and accidentally broke the sound barrier on the way to a morning bake sale.',
         'text': '''I bought a "high-speed" e-bike to conquer my morning commute. I wanted efficiency; I got a death-wish disguised as a Huffy.
