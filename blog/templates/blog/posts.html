@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    All Posts
+    {{ title }}
 {% endblock %}
 
 {% block content %}
-    <h2>All Posts</h2>
+    <h2>{{ title }}</h2>
     {% include "blog/includes/post_list.html" %}
 
 {% endblock %}

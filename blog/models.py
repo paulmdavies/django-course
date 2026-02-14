@@ -27,6 +27,6 @@ class Post(Model):
     date = DateField(auto_now_add=True)
     slug = SlugField(null=False)
 
-    author = ForeignKey(Author, on_delete=CASCADE)
+    author = ForeignKey(Author, on_delete=CASCADE, related_name='posts')
     tag = ManyToManyField(Tag, related_name='tags', blank=True)
 
