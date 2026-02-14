@@ -12,4 +12,10 @@
     <img class="post-image" src={% static 'blog/images/'|add:post.image_name %} alt="No image found">
     <h5>{{ post.summary }}</h5>
     <p>{{ post.content|linebreaks }}</p>
+    <h6>Tags</h6>
+    <div>
+    {% for tag in tags %}
+        <p><a href={% url 'tag' tag.slug %}>{{ tag.caption }}</a></p>
+    {% endfor %}
+    </div>
 {% endblock %}

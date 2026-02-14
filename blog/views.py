@@ -2,7 +2,7 @@ from datetime import date
 
 from django.shortcuts import render
 
-from blog.models import Post, Author
+from blog.models import Post, Author, Tag
 
 
 # Create your views here.
@@ -29,11 +29,14 @@ def posts(request):
     )
 
 def post(request, slug):
+    post = Post.objects.get(slug=slug)
+
     return render(
         request,
         'blog/post.html',
         {
-            'post': Post.objects.get(slug=slug)
+            'post': post,
+            'tags': post.tag.all()
         }
     )
 
@@ -58,5 +61,18 @@ def author(request, slug):
         {
             'title': f'Posts by {author.first_name} {author.last_name}',
             'posts': posts_by_author
+        }
+    )
+
+def tag(request, slug):
+    tag = Tag.objects.get(slug=slug)
+    posts_with_tag = tag.posts.all().order_by('date')
+
+    return render(
+        request,
+        'blog/posts.html',
+        {
+            'title': f'Posts tagged {tag.caption}',
+            'posts': posts_with_tag
         }
     )
