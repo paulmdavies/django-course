@@ -20,6 +20,18 @@ class PostAdmin(ModelAdmin):
     }
 
 
-admin.site.register(Author)
+class AuthorAdmin(ModelAdmin):
+    list_display = [
+        'first_name',
+        'last_name',
+        'email'
+    ]
+
+    prepopulated_fields = {
+        'slug': ['first_name', 'last_name']
+    }
+
+
+admin.site.register(Author, AuthorAdmin)
 admin.site.register(Tag)
 admin.site.register(Post, PostAdmin)

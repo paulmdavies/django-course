@@ -9,6 +9,8 @@ class Author(Model):
     last_name = CharField(max_length=100)
     email = CharField(max_length=100)
 
+    slug = SlugField()
+
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
