@@ -8,11 +8,13 @@ class PostAdmin(ModelAdmin):
     list_display = [
         'title',
         'author',
-        'slug'
+        'date'
     ]
 
     list_filter = [
-        'author'
+        'author',
+        'tags',
+        'date'
     ]
 
     prepopulated_fields = {

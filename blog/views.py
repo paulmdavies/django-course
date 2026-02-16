@@ -1,6 +1,6 @@
 from datetime import date
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from blog.models import Post, Author, Tag
 
@@ -29,14 +29,14 @@ def posts(request):
     )
 
 def post(request, slug):
-    post = Post.objects.get(slug=slug)
+    post = get_object_or_404(Post, slug=slug)
 
     return render(
         request,
         'blog/post.html',
         {
             'post': post,
-            'tags': post.tag.all()
+            'tags': post.tags.all()
         }
     )
 
@@ -52,7 +52,7 @@ def authors(request):
     )
 
 def author(request, slug):
-    author = Author.objects.get(slug=slug)
+    author = get_object_or_404(Author, slug=slug)
     posts_by_author = author.posts.all().order_by('date')
 
     return render(
@@ -65,7 +65,7 @@ def author(request, slug):
     )
 
 def tag(request, slug):
-    tag = Tag.objects.get(slug=slug)
+    tag = get_object_or_404(Tag, slug=slug)
     posts_with_tag = tag.posts.all().order_by('date')
 
     return render(

@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Model, CharField, DateField, SlugField, CASCADE
+from django.db.models import Model, CharField, DateField, SlugField, CASCADE, TextField
 from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 
@@ -26,11 +26,11 @@ class Tag(Model):
 class Post(Model):
     title = CharField(max_length=1000, null=False)
     summary = CharField(max_length=1000, null=False)
-    content = CharField(max_length=10000, null=False)
+    content = TextField(max_length=10000, null=False)
     image_name = CharField(max_length=100, null=False)
     date = DateField(auto_now_add=True)
     slug = SlugField(null=False)
 
     author = ForeignKey(Author, on_delete=CASCADE, related_name='posts')
-    tag = ManyToManyField(Tag, related_name='posts', blank=True)
+    tags = ManyToManyField(Tag, related_name='posts', blank=True)
 
